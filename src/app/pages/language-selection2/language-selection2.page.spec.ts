@@ -1,21 +1,21 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
-// https://stackoverflow.com/questions/40125159/angular2-testing-no-provider-for-locationstrategy
 import { RouterTestingModule } from '@angular/router/testing';
 
-import { HomePage } from './home.page';
 
-describe('HomePage', () => {
-  let component: HomePage;
-  let fixture: ComponentFixture<HomePage>;
+import { LanguageSelection2Page } from './language-selection2.page';
+
+describe('LanguageSelection2Page', () => {
+  let component: LanguageSelection2Page;
+  let fixture: ComponentFixture<LanguageSelection2Page>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ HomePage ],
-      imports: [IonicModule.forRoot(), RouterTestingModule]
+      declarations: [ LanguageSelection2Page ],
+      imports: [IonicModule.forRoot(),RouterTestingModule]
     }).compileComponents();
 
-    fixture = TestBed.createComponent(HomePage);
+    fixture = TestBed.createComponent(LanguageSelection2Page);
     component = fixture.componentInstance;
     fixture.detectChanges();
   }));
