@@ -7,6 +7,8 @@ import { Injectable } from '@angular/core';
 
 export class DataService {
 
+public testitems : Array<any> = [];
+
 public items :  Array<any> = [
    {
       "_id":5,

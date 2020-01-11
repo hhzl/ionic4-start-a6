@@ -14,8 +14,8 @@ describe('DataService', () => {
 
   it('should have test data', () => {
     const service: DataService = TestBed.get(DataService);
-    var testitems: Array<any>;
-    if (service.items[0].word == 'butterfly' { // test data under 'items'
+    var testitems: Array<any> = [];
+    if (service.items[0].word == 'butterfly') { // test data under 'items'
         testitems = service.items;       
     } else {   // separate testitems property
         testitems = service.testitems;                              
