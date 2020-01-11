@@ -115,6 +115,9 @@ ionic generate page pages/settings
 ionic generate page pages/languageSelection
 ionic generate page pages/languageSelection2
 ionic generate page pages/summary
+
+
+ionic cordova resources
  
 ````
 
@@ -161,6 +164,10 @@ Build apk file with
 
     ionic cordova run android
 
+
+Android version numbers and API/SDK numbers
+https://developer.android.com/guide/topics/manifest/uses-sdk-element
+https://en.wikipedia.org/wiki/Android_version_history
 
 ## Note about testing
 
