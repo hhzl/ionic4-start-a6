@@ -14,6 +14,7 @@ export class BoxOfQuestionsService {
 
   lwDB : LWdbService;
   service : SettingsService;
+  data : DataService;
   numberOfLetters : number = 5;
 
   private selectedIndex : number = 0;
@@ -28,17 +29,55 @@ export class BoxOfQuestionsService {
 
   constructor(lwDBservice: LWdbService, d : DataService, s : SettingsService) { 
      // initialize selectedItems to all items available
-     this.selectedItems = d.items;
+     this.data = d;
      this.service = s;
      this.lwDB = lwDBservice; 
+     this.selectAllItems();
   }  
 
+
+
+  selectAllItems() {
+    this.selectedItems = this.data.items;
+    return this.getSelectedItems();
+  }
 
 
 
   getSelectedItems() {
     return this.selectedItems;
   }
+
+
+
+
+
+  allItemsFilteredByTag(tag) {
+
+			if(tag == null)
+			{
+				//no tag, return all items
+		                return this.selectAllItems()		
+			}
+			else
+			{
+				return this.itemsByTag(this.selectAllItems(), tag);
+			}
+
+		}
+
+
+
+
+  itemsByTag(itemsToFilter, tag){
+
+			function hasThisTag(anItem) {
+				var arrTags = anItem.tags.split(' ');
+				return (arrTags.indexOf(tag) >= 0);
+			}
+
+			return (itemsToFilter).filter(hasThisTag);
+		}
 
 
 
