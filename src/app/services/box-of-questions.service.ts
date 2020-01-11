@@ -39,6 +39,7 @@ export class BoxOfQuestionsService {
 
   selectAllItems() {
     this.selectedItems = this.data.items;
+    this.selectedIndex = 0;
     return this.getSelectedItems();
   }
 
@@ -54,7 +55,7 @@ export class BoxOfQuestionsService {
 
   allItemsFilteredByTag(tag) {
 
-			if(tag == null)
+			if(tag == "")
 			{
 				//no tag, return all items
 		                return this.selectAllItems()		
@@ -76,7 +77,9 @@ export class BoxOfQuestionsService {
 				return (arrTags.indexOf(tag) >= 0);
 			}
 
-			return (itemsToFilter).filter(hasThisTag);
+                        this.selectedIndex = 0;
+                        this.selectedItems = (itemsToFilter).filter(hasThisTag);
+			return this.selectedItems;
 		}
 
 

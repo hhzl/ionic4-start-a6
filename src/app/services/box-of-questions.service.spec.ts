@@ -46,6 +46,43 @@ describe('BoxOfQuestionsService', () => {
   });
 
 
+  it('should allow to select items by a tag', () => {
+    const service: BoxOfQuestionsService = TestBed.get(BoxOfQuestionsService);
+
+    var items : Array<any>; 
+    items = service.allItemsFilteredByTag("animal");
+    expect(items.length).toBe(9);
+
+    items = service.allItemsFilteredByTag("mammal");
+    expect(items.length).toBe(4);
+
+    items = service.allItemsFilteredByTag("otherAnimal");
+    expect(items.length).toBe(3);
+
+
+    items = service.allItemsFilteredByTag("bird");
+    expect(items.length).toBe(2);
+
+    items = service.allItemsFilteredByTag("food");
+    expect(items.length).toBe(2);
+
+    expect(service.currentItem().word).toBe("carrots");
+    expect(service.nextItem().word).toBe("mushrooms");
+    expect(service.nextItem().word).toBe("carrots");
+
+
+
+    items = service.allItemsFilteredByTag("nature");
+    expect(items.length).toBe(1);
+
+    items = service.allItemsFilteredByTag("");
+    expect(items.length).toBe(12);
+
+
+  });
+
+
+
 
 
 
