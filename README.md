@@ -105,6 +105,8 @@ ionic generate service services/Settings
 ionic generate page pages/choose-mode
 ionic generate page pages/choose-mode-m
 ionic generate page pages/choose-abc
+ionic generate page pages/choose-by-tag
+ionic generate page pages/choose-by-tag-a
 ionic generate page pages/learn-mode
 ionic generate page pages/learn-mode-m
 ionic generate page pages/picture-with-labels

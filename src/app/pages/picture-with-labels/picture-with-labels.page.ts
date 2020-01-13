@@ -90,8 +90,7 @@ export class PictureWithLabelsPage implements OnInit {
 
 
        this.itemImageFileName = item.picture;
-       console.log(this.itemImageFileName);
-
+ 
        // adapt if necessary
        this.itemAudioFileName = item.audio;
        // this.itemAudioFileName = 'en-' + this.wordId+'.mp3'; 
@@ -115,12 +114,18 @@ displayWord2(item){
        this.translate3 = item[langAbrev];
     }
 
+    this.itemImageFileName = item.picture;
+    console.log('display2 ' + this.itemImageUrlPath+this.itemImageFileName);
+    // console.log();
+    // Adapt
+    // this.itemAudioFileName = item.audio;
+
 
 }
 
 
 nextWord() {
-       console.log('picture-with-labels.page : nextWord');
+       // console.log('picture-with-labels.page : nextWord');
        var w = this.box.nextItem();
        this.displayWord(w);
 }

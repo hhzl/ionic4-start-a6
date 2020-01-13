@@ -4,7 +4,9 @@ import { NavController } from '@ionic/angular';
 import { SettingsService } from '../../services/settings.service';
 import { BoxOfQuestionsService } from '../../services/box-of-questions.service';
 
-// This module treats item objects as word objects (obj.word, obj.translate);
+// This module treats item objects as word objects (obj.word, obj.translate
+// or  obj.en and obj.fr etc); needs to be revised.
+
 
 @Component({
   selector: 'app-choose-abc',
@@ -92,16 +94,12 @@ constructor(public n: NavController, box: BoxOfQuestionsService, s: SettingsServ
      // reset mode to linear
      this.service.mode = 'linear';
 
-  // document.getElementById('z').bgColor = '#ff0000';
-
       
-
-  // loop through all entries, get the first letter and set the color object to primary.   
-
+  // initialize the colors for the ABC buttons   
      this.initializeColorObject();
-     this.initializeJumpTable();
 
-     // color="{{post.color}}"
+  // initialize the index table for the ABC buttons
+     this.initializeJumpTable();
 
  }
 

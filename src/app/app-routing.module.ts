@@ -56,6 +56,14 @@ const routes: Routes = [
     path: 'language-selection2',
     loadChildren: () => import('./pages/language-selection2/language-selection2.module').then( m => m.LanguageSelection2PageModule)
   },
+  {
+    path: 'choose-by-tag',
+    loadChildren: () => import('./pages/choose-by-tag/choose-by-tag.module').then( m => m.ChooseByTagPageModule)
+  },
+  {
+    path: 'choose-by-tag-a',
+    loadChildren: () => import('./pages/choose-by-tag-a/choose-by-tag-a.module').then( m => m.ChooseByTagAPageModule)
+  },
 ];
 
 @NgModule({

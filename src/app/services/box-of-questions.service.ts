@@ -54,7 +54,7 @@ export class BoxOfQuestionsService {
 
 
   allItemsFilteredByTag(tag) {
-
+               console.log('allItemsFilteredByTag(' + tag + ')');
 			if(tag == "")
 			{
 				//no tag, return all items
@@ -77,8 +77,9 @@ export class BoxOfQuestionsService {
 				return (arrTags.indexOf(tag) >= 0);
 			}
 
-                        this.selectedIndex = 0;
+                        this.setSelectedIndex(0);
                         this.selectedItems = (itemsToFilter).filter(hasThisTag);
+                        console.log('number of selected items: ' + this.selectedItems.length);
 			return this.selectedItems;
 		}
 
