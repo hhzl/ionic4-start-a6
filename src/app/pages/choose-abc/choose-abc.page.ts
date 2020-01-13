@@ -93,6 +93,7 @@ constructor(public n: NavController, box: BoxOfQuestionsService, s: SettingsServ
 
      // reset mode to linear
      this.service.mode = 'linear';
+     this.service.selectAllItems();
 
       
   // initialize the colors for the ABC buttons   
