@@ -11,12 +11,7 @@ import { BoxOfQuestionsService } from '../../services/box-of-questions.service';
 export class ChooseByTagPage implements OnInit {
 
 
-service: BoxOfQuestionsService;
-navCtrl : NavController;
-
-constructor(public n: NavController, box: BoxOfQuestionsService) {
-     this.navCtrl = n;
-     this.service = box;
+constructor(public navCtrl: NavController, public service: BoxOfQuestionsService) {
  }
 
 
