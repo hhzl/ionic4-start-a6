@@ -1,5 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
+import { RouterTestingModule } from '@angular/router/testing';
+
 
 import { ChooseByTagFPage } from './choose-by-tag-f.page';
 
@@ -10,7 +12,7 @@ describe('ChooseByTagFPage', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ ChooseByTagFPage ],
-      imports: [IonicModule.forRoot()]
+      imports: [IonicModule.forRoot(),RouterTestingModule]
     }).compileComponents();
 
     fixture = TestBed.createComponent(ChooseByTagFPage);
