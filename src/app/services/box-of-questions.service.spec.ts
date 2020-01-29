@@ -42,7 +42,7 @@ describe('BoxOfQuestionsService', () => {
     var i = Math.floor(Math.random() * (max - min + 1)) + min;
     var item = service.getSelectedItems()[i];
 
-    expect(item.tags).toBeTruthy();
+    expect(item.tags.length > 0).toBeTruthy(); // a string with a length
   });
 
 
@@ -50,6 +50,11 @@ describe('BoxOfQuestionsService', () => {
     const service: BoxOfQuestionsService = TestBed.get(BoxOfQuestionsService);
 
     var items : Array<any>; 
+
+    items = service.selectAllItems();
+
+    if (items[0].word == 'butterfly') { // test data is used as 'items'
+
     items = service.allItemsFilteredByTag("animal");
     expect(items.length).toBe(9);
 
@@ -78,6 +83,8 @@ describe('BoxOfQuestionsService', () => {
     items = service.allItemsFilteredByTag("");
     expect(items.length).toBe(12);
 
+
+    };
 
   });
 
