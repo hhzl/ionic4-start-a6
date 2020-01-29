@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { SettingsService } from '../services/settings.service';
+import { BoxOfQuestionsService } from '../services/box-of-questions.service';
+
 
 
 @Component({
@@ -10,10 +12,16 @@ import { SettingsService } from '../services/settings.service';
 
 export class HomePage {
   service : SettingsService;
+  boxOfQuestions: BoxOfQuestionsService;
 
-  constructor(settings: SettingsService) {
+  constructor(settings: SettingsService, b: BoxOfQuestionsService) {
                    this.service = settings;
+                   this.boxOfQuestions = b;
                    console.log('home.page constructor - settings made available');
   }
+
+  ionViewWillEnter(){
+   this.boxOfQuestions.selectAllItems();
+ }
 
 }

@@ -20,7 +20,7 @@ export class BoxOfQuestionsService {
   private selectedIndex : number = 0;
   private selectedItems : Array<any>;
 
-  private numberOfItems: number;
+  public numberOfItems: number = 0;
 
   mode : string = 'linear';   // shortwords, smallSelection, learnmode, practicemode
 
@@ -40,8 +40,28 @@ export class BoxOfQuestionsService {
   selectAllItems() {
     this.selectedItems = this.data.items;
     this.selectedIndex = 0;
+    this.limitSelectionIfLabelInSecondLanguageIsRequested();
+    this.numberOfItems = this.selectedItems.length;
     return this.getSelectedItems();
   }
+
+
+ limitSelectionIfLabelInSecondLanguageIsRequested() {
+    var itemsWithFirstAndSecondLanguage : Array<any> = [];
+    var lang2Abrev = this.service.getLanguageAbreviation(this.service.settings.language2);
+    var item : any;
+
+    if (this.service.settings.includePicturesWithNoLabel) { // no action
+        }
+    else { // only include pictures which have a label in a second language
+      for (item of this.selectedItems)
+          {if ((item[lang2Abrev]).length > 0) {itemsWithFirstAndSecondLanguage.push(item) }};
+      console.log('limitSelectionIfLabelInSecondLanguageIsRequested: ' + itemsWithFirstAndSecondLanguage.length);
+      this.selectedItems = itemsWithFirstAndSecondLanguage;
+    }
+  }
+
+
 
 
 
