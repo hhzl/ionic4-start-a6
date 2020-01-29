@@ -36,6 +36,8 @@ describe('BoxOfQuestionsService', () => {
 
 
   it('Items should have a property "tags"', () => {
+    // this tests needs to be improved. It depends on a random selection of 
+    // an item and sometimes fails.
     const service: BoxOfQuestionsService = TestBed.get(BoxOfQuestionsService);
     var min = 0;
     var max = service.getSelectedItems().length -1;
