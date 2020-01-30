@@ -107,6 +107,7 @@ ionic generate page pages/choose-mode-m
 ionic generate page pages/choose-abc
 ionic generate page pages/choose-by-tag
 ionic generate page pages/choose-by-tag-a
+ionic generate page pages/choose-by-tag-f
 ionic generate page pages/learn-mode
 ionic generate page pages/learn-mode-m
 ionic generate page pages/picture-with-labels
@@ -182,3 +183,4 @@ has to be imported and then used in
 imports: [IonicModule.forRoot(),RouterTestingModule]
 ````
 
+Test data may be created with a service such as https://csvjson.com/csv2json
