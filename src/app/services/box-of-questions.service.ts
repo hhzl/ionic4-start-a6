@@ -55,7 +55,12 @@ export class BoxOfQuestionsService {
         }
     else { // only include pictures which have a label in a second language
       for (item of this.selectedItems)
-          {if ((item[lang2Abrev]).length > 0) {itemsWithFirstAndSecondLanguage.push(item) }};
+         if (item.en) { // one of the data structure formats
+             if ((item[lang2Abrev]).length > 0) {itemsWithFirstAndSecondLanguage.push(item) }
+             }
+         else {// the test data, just choose all items
+              itemsWithFirstAndSecondLanguage.push(item)}
+         ;
       console.log('limitSelectionIfLabelInSecondLanguageIsRequested: ' + itemsWithFirstAndSecondLanguage.length);
       this.selectedItems = itemsWithFirstAndSecondLanguage;
     }
