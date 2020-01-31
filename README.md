@@ -183,4 +183,9 @@ has to be imported and then used in
 imports: [IonicModule.forRoot(),RouterTestingModule]
 ````
 
-Test data may be created with a service such as https://csvjson.com/csv2json
+## Data
+
+The pictures are in the directory src/assets/data/pictures.
+The file src/assets/data/csv/wordlist_en-ge.csv contains the labels for the pictures.
+A service such as https://csvjson.com/csv2json is used to convert the label data into a JSON array.
+The JSON array code has to be pasted into the file src/app/services/data.service.ts.
