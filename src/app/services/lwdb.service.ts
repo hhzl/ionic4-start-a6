@@ -6,7 +6,7 @@ import { Injectable } from '@angular/core';
 export class LWdbService {
 
 
-    public dbName : string = 'start-a5';
+    public dbName : string = 'start-a6';
 
     // private variables
 
