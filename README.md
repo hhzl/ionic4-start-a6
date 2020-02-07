@@ -152,16 +152,9 @@ The header of the page home.page.html is
     </ion-toolbar>
 </ion-header>
 ````
-## Note about testing
 
-To make 'should create' tests work for pages
-````
-import { RouterTestingModule } from '@angular/router/testing';
-````
-has to be imported and then used in
-````
-imports: [IonicModule.forRoot(),RouterTestingModule]
-````
+![How pages use services](doc/How_pages_use_services.png)
+
 
 ## Adding Data
 
@@ -179,6 +172,18 @@ The JSON array code has to be pasted into the file
 
     src/app/services/data.service.ts.
 
+
+
+## Note about testing
+
+To make 'should create' tests work for pages
+````
+import { RouterTestingModule } from '@angular/router/testing';
+````
+has to be imported and then used in
+````
+imports: [IonicModule.forRoot(),RouterTestingModule]
+````
 
 
 # RUN THE APP ON THE DEVICE
